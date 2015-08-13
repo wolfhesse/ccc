@@ -2,14 +2,18 @@ var id=Math.random();
 var WebSocketClient = require('websocket').client;
 var client = new WebSocketClient();
 
-client.on('connectFailed',function(error){console.log('conn error: '+error.toString());});
+client.on('connectFailed',function(error){
+	console.log('conn error: '+error.toString());
+	
+});
+
 client.on('connect', function(connection){
 
 	console.log('connected');
 
-	connection.on('error', function(cerr){console.log(cerr);});
-	connection.on('close', function(data){console.log(data);});
-	connection.on('message', function(data){console.log(data);});
+	connection.on('error', function(cerr){console.log('error: '+cerr);});
+	connection.on('close', function(data){console.log('close: '+data);});
+	connection.on('message', function(data){console.log('message: '+data);});
 
 	function sendData(){
 		if(connection.connected){
@@ -23,5 +27,6 @@ client.on('connect', function(connection){
 
 //console.log(client);
 
-client.connect('ws://challs.campctf.ccc.ac:10116','q');
+client.connect('ws://challs.campctf.ccc.ac:10116/q');
+
 
