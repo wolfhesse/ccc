@@ -1,3 +1,10 @@
+Version 0.2.0:
+ - move challenges to respective dirs
+ - added spam.py to downloads
+ - falsches ws proto
+ - Merge tag '0.1.0' into develop
+ - Merge branch 'r-0.1.0'
+
 Version 0.1.0
  - Merge remote-tracking branch 'origin/master'
  - Initial commit
